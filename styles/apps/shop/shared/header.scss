@@ -1,0 +1,27 @@
+.p-grid {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+header {
+    margin-bottom: 25px;
+    .logo {
+         img {
+            width: 160px;
+         }
+    }
+    // .search {
+
+    //   }
+    
+      .navigation {
+        padding-top: 25px;
+      }
+    
+      .tools {
+    
+        .pi {
+          margin-right: 10px;
+        }
+      }
+    }

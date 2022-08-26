@@ -1,0 +1,47 @@
+<p-toast></p-toast>
+<div class="admin-page">
+    <p-card    [header]=" isEdit ? 'Edit Category': 'Add Category'" [subheader]=" isEdit ? 'Edit category below': 'Add new Categories'">
+
+        <div class="p-grid ">
+            <div class="p-col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left"></div>
+                    <div class="p-toolbar-group-right">
+                        <p-button  styleClass="p-button-primary px-4"  [label]=" isEdit ? 'Update': 'Create'" (click)="onSubmit()" icon="pi pi-plus"></p-button>
+                        <p-button  styleClass="p-button-secondary"  label="Cancel" icon="pi pi-arrow-circle-left"></p-button>
+                 </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="p-grid mt-4" >
+            <div class="p-col-12">
+                <form [formGroup]="form" >
+                    <div class="p-fluid p-formgrid p-grid">
+                        <div class="p-field p-col">
+                            <div class="field">
+                                <label for="name">Name</label>
+                                <input formControlName="name" id="name" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                <small *ngIf="categoryForm.name.invalid && isSubmitted" class="p-error" >
+                                        Name is required        
+                                </small>
+                            </div>
+                            <div class="p-field p-col">
+                                <label for="icon">Icon</label>
+                                <input  formControlName="icon" id="icon" type="text" class="text-base text-color surface-overlay p-2 border-1 border-solid surface-border border-round appearance-none outline-none focus:border-primary w-full">
+                                <small *ngIf="categoryForm.icon.invalid && isSubmitted" class="p-error" >
+                                 Icon  is required        
+                            </small>
+                            </div>
+                            <div class="p-field p-col">
+                                <label for="color">Color</label><br/>
+                                <p-colorPicker  formControlName="color" ></p-colorPicker>
+                                <!-- <small *ngIf="categoryForm.icon.invalid && isSubmitted" class="p-error" > -->
+                                 <!-- Icon  is required         -->
+                            <!-- </small> -->
+                            </div>
+                        </div>
+                    </div> 
+                </form>
+                
+            </div>
+        </div>

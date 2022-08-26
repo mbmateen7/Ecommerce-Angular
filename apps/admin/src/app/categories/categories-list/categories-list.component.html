@@ -1,0 +1,47 @@
+<p-toast></p-toast>
+<div class="admin-page">
+    <p-card header="Categories" subheader="List of all categories">
+        <div class="p-grid">
+            <div class="p-col-12">
+                <p-toolbar>
+                    <div class="p-toolbar-group-left">
+                        <p-button routerLink="form" styleClass="p-button-success"  label="New" icon="pi pi-plus"></p-button>
+                    </div>
+                </p-toolbar>
+            </div>
+        </div>
+        <div class="p-grid" >
+            <div class="p-col-12">
+                <p-table [value]="categories" responsiveLayout="scroll" styleClass="p-datatable-gridlines">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th>Name</th>
+                            <th>Icon</th>
+                            <th>Color</th>
+                            <th></th>
+=                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-categories>
+                        <tr>
+                            <td>{{categories.name}}</td>
+                            <td>
+                                <!-- <i  style="font-size: 2rem" class="pi" [ngClass]="'pi-' + categories.icon" ></i> -->
+                                {{categories.icon }}
+                            </td>
+                            <td>{{categories.color}}</td>
+    
+                            <td> 
+                                <p-button (click)="onDelete(categories._id)" styleClass="p-button-danger p-mr-2"
+                                   icon="pi pi-trash">
+                                </p-button>
+                            <p-button routerLink="form/" (click)="onEditCategories(categories._id)"  styleClass="p-button-success"
+                                 icon="pi pi-pencil">
+                              </p-button></td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+                
+            </div>
+        </div>
+    </p-card>
+</div>
